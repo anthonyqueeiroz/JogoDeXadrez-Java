@@ -1,4 +1,4 @@
-package model.entities.boardgame;
+package model.entities.board;
 
 public class Board {
 
@@ -30,4 +30,12 @@ public class Board {
 	public void setColumns(Integer columns) {
 		this.columns = columns;
 	}	
-}
+	
+	public Piece piece(Integer row, Integer column) {
+		return pieces[row][column];
+	}
+	
+	public Piece piece(Position position) {
+		return pieces[position.getRow()][position.getColumn()];
+	}
+ }

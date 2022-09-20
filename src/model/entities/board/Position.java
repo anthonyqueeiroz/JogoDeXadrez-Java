@@ -1,4 +1,4 @@
-package model.entities.boardgame;
+package model.entities.board;
 
 public class Position {
 	

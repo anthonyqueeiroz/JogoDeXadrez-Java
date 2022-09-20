@@ -1,4 +1,4 @@
-package model.entities.boardgame;
+package model.entities.board;
 
 public class Piece {
 
@@ -16,5 +16,4 @@ public class Piece {
 	protected Board getBoard() {
 		return board;
 	}
-	
 }
