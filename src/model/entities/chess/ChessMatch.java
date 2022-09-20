@@ -1,6 +1,9 @@
 package model.entities.chess;
 
 import model.entities.board.Board;
+import model.entities.board.Position;
+import model.entities.chess.pieces.King;
+import model.entities.chess.pieces.Rook;
 
 public class ChessMatch {
 
@@ -8,6 +11,7 @@ public class ChessMatch {
 	
 	public ChessMatch() {
 		board = new Board(8, 8);
+		initialSetup();
 	}
 	
 	public ChessPiece[][] getPieces() {
@@ -18,5 +22,10 @@ public class ChessMatch {
 			}
 		}
 		return matriz;
+	}
+	
+	private void initialSetup() {
+		board.placePiece(new Rook(board, Color.BLACK), new Position(0, 0));
+		board.placePiece(new King(board, Color.WHITE), new Position(7, 7));
 	}
 }
