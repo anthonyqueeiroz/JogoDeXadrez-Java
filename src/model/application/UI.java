@@ -1,6 +1,10 @@
 package model.application;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 import model.entities.chess.ChessPiece;
+import model.entities.chess.ChessPosition;
 import model.entities.chess.Color;
 
 public class UI {
@@ -27,6 +31,17 @@ public class UI {
 	public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
 	public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
 	public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
+	
+	public static ChessPosition readChessPosition(Scanner sc) {
+		try {
+			String position = sc.nextLine();
+			char column = position.charAt(0);
+			int row = Integer.parseInt(position.substring(1));
+			return new ChessPosition(column, row);
+		} catch (InputMismatchException e) {
+			throw new InputMismatchException("Error reading chess position: only accepted values from a1 to h8.");
+		}
+	}
 
 	public static void printBoard(ChessPiece[][] pieces) {
 		for (int i = 0; i < pieces.length; i++) {

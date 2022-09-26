@@ -1,6 +1,8 @@
 package model.entities.chess.exceptions;
 
-public class ChessException extends RuntimeException {
+import model.entities.board.exceptions.BoardException;
+
+public class ChessException extends BoardException {
 	private static final long serialVersionUID = 1L;
 	
 	public ChessException(String msg) {
