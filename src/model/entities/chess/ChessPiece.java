@@ -3,7 +3,7 @@ package model.entities.chess;
 import model.entities.board.Board;
 import model.entities.board.Piece;
 
-public class ChessPiece extends Piece {
+public abstract class ChessPiece extends Piece {
 
 	private Color color;
 
